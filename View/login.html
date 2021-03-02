@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/all.css" >
+	<link rel="stylesheet" href="../css/login.css" >
+	<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-auth.js"></script>
+	<script src="../Conexao/conexao.js"></script>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<script src="../jsViews/login.js"></script>   
+</head>
+<body>
+<div class="container">
+	<div class="d-flex justify-content-center h-30">
+		<img src="../logo.png">
+	</div><br>
+	<div class="d-flex justify-content-center h-70">
+		<div class="card">
+			<div class="card-header">
+				<h3>Entrar</h3>
+			</div>
+			<div class="card-body">
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" id="email" placeholder="Email">	
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" id="senha" placeholder="Senha">
+					</div>
+					<div class="form-group">
+						<button class="btn float-right login_btn" onclick="login()">Login</button>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

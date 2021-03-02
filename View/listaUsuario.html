@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Listar Usuarios</title>
+  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    #cursorblk {
+      cursor: not-allowed;
+    }
+    #alert {
+      display: none;
+    }
+    #alertDelete {
+      display: none;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/2f9456b00b.js"></script>
+  <script src="../bootstrap/js/jquery.min.js"></script>
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
+  <script src="../bootstrap/js/popper.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-auth.js"></script>
+  <script src="../Conexao/conexao.js"></script>
+  <script src="../jsViews/listaUsuario.js"></script>
+  
+</head>
+
+<body onLoad="carregarTable()" style="background-color:rgba(0, 0, 0, 0);">
+  <div class="container" style="padding: 20px; background-color:rgba(0, 0, 0, 0.3);border-radius: 25px;">
+    <h1 class="text-center" style="color: white;">Usuarios:</h1><br>
+    <div id="table">
+      <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-4"><img src="../giphy.gif"></div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+  </div>
+  <div id="mainModal"></div>
+  <div id="modalExcluir"></div>
+</body>
+
+</html>

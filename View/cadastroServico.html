@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Cadastro de Serviço</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">  
+        <style>
+            #alert {
+                display: none;
+            }
+        </style>      
+        <script src="../js/jquery-3.3.1.min.js"></script>  
+        <script src="../bootstrap/js/bootstrap.min.js"></script>    
+        <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-auth.js"></script>
+        <script src="../Conexao/conexao.js"></script>
+        <script src="../jsViews/cadastroServico.js"></script>    
+    </head>
+    <body style="background-color:rgba(0, 0, 0, 0);">         
+        <div class="container" style="padding: 20px; background-color:rgba(0, 0, 0, 0.3);border-radius: 25px;">
+            <h1 class="text-center" style="color: white;">Cadastro de Serviço</h1><br><br>
+            <form autocomplete="off" >
+                    <div id="alert">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Cadastrado com sucesso!</strong>
+                            <button type="button" class="close" onclick="limparAlert()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label style="color: white;">Serviço:</label>
+                        <input type="text" id="inputServico" placeholder="Digite o serviço" class="form-control"><br>
+                    </div>
+                    <div class="col-md-6">
+                        <label style="color: white;">Preço:</label>
+                        <input type="number" id="inputPreco" placeholder="Digite o preço" class="form-control"><br>
+                    </div>  
+                </div> 
+                <div class="row">
+                    <div class="col-md-12">
+                        <label style="color: white;">Categoria do Serviço:</label>
+                        <select class="form-control" id="selectCategoria">
+                            <option selected value="">Selecione...</option>
+                            <option value="computador">Computador</option>
+                            <option value="impressora">Impressora</option>
+                            <option value="rede">Rede</option>
+                            <option value="especifico">Especifico</option>
+                        </select><br>
+                    </div>
+                </div>
+                <br><br>
+                <button type="button" class="btn btn-primary btn-block" onClick="cadastroServico()">Cadastrar Serviço</button>
+                <div  style="padding-bottom: 18px;"></div>
+            </form>
+        </div>
+    </body>
+    
+</html>

@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Nova Ordem de Serviço</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">  
+        <style>
+            #alert {
+                display: none;
+            }
+        </style>      
+        <script src="../js/jquery-3.3.1.min.js"></script>  
+        <script src="../bootstrap/js/bootstrap.min.js"></script>    
+        <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-auth.js"></script>
+        <script src="../Conexao/conexao.js"></script>
+        <script src="../jsViews/novaOrdemServico.js"></script>    
+    </head>
+    <body onLoad="carregarSelect()" style="background-color:rgba(0, 0, 0, 0);">         
+        <div class="container" style="padding: 20px; background-color:rgba(0, 0, 0, 0.3);border-radius: 25px;">
+            <h1 class="text-center" style="color: white;">Nova Ordem de Serviço</h1><br><br>
+            <form autocomplete="off" >
+                    <div id="alert">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Cadastrado com sucesso!</strong>
+                            <button type="button" class="close" onclick="limparAlert()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label style="color: white;">Cliente:</label>
+                        <input type="text" id="inputCliente" placeholder="Digite o nome" class="form-control"><br>
+                    </div>
+                    <div class="col-md-6">
+                        <label style="color: white;">CPF/CNPJ:</label>
+                        <input type="text" id="inputDocumento" placeholder="Digite o documento" class="form-control"><br>
+                    </div>  
+                </div> 
+                <div class="row">
+                    <div class="col-md-6">
+                        <label style="color: white;">Endereço:</label>
+                        <input type="text" id="inputEndereco" placeholder="Digite o endereço" class="form-control"><br>
+                    </div>
+                    <div class="col-md-6">
+                        <label style="color: white;">Telefone:</label>
+                        <input type="text" id="inputTelefone" placeholder="Digite o telefone" class="form-control"><br>
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                            <label style="color: white;">Descrição do Problema:</label>
+                            <input type="text" id="inputDescricao" placeholder="Informe o problema descrito pelo cliente" class="form-control"><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label style="color: white;">Técnico Responsável:</label>
+                        <div id="select"></div>
+                    </div>
+                </div>
+                <br><br>
+                <button type="button" class="btn btn-primary btn-block" onClick="abrirOS()">Gerar Ordem de Serviço</button>
+                <div  style="padding-bottom: 18px;"></div>
+            </form>
+        </div>
+    </body>
+    
+</html>

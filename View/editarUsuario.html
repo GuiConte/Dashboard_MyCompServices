@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Editar Conta de Usuario</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">  
+        <style>
+            #alert {
+                display: none;
+            }
+        </style>      
+        <script src="../js/jquery-3.3.1.min.js"></script>  
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-auth.js"></script>
+        <script src="../Conexao/conexao.js"></script>
+        <script src="../jsViews/editarUsuario.js"></script>    
+    </head>
+    <body onload="carregarUsuario()" style="background-color:rgba(0, 0, 0, 0);">         
+        <div class="container" style="padding: 20px; background-color:rgba(0, 0, 0, 0.3);border-radius: 25px;">
+            <h1 class="text-center" style="color: white;">Editar Usuario</h1><br><br>
+            <form autocomplete="off" >
+                    <div id="alert">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Cadastrado com sucesso!</strong>
+                            <button type="button" class="close" onclick="limparAlert()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label style="color: white;">Nome:</label>
+                        <input type="text" id="inputNome" placeholder="Digite o nome" class="form-control"><br>
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col-md-12">
+                        <label style="color: white;">Email:</label>
+                        <input type="email" readonly id="inputEmail" placeholder="Email gerado automaticamente (utilizado para login)" class="form-control"><br>
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label style="color: white;">Senha:</label>
+                        <input type="password" id="inputSenha" placeholder="Digite a senha" class="form-control"><br>
+                    </div>
+                </div> 
+                <input type="hidden" id="hashUsuario">
+                <input type="hidden" id="tipoUsuario">
+                <br><br>
+                <button type="button" class="btn btn-primary btn-block" onClick="updateUser()">Editar Usuario</button>
+                <div  style="padding-bottom: 18px;"></div>
+            </form>
+        </div>
+    </body>
+    
+</html>
